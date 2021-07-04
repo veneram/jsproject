@@ -52,3 +52,41 @@ console.log(ref, add);
 add.d = 15;
 
 console.log(ref, add);
+
+const oldArray = ['a', 'b', 'c'];
+const newArray = oldArray.slice();
+
+newArray[1] = 'ashdksdhfkjdf';
+
+console.log(newArray);
+console.log(oldArray);
+
+//Spread operater
+
+const video = ['youtube', 'vimeo', 'rutube'],
+      blogs = ['wordpress', 'livejournals', 'blogger'],
+      internet = [...video, ...blogs, 'vk', 'facebook'];
+
+console.log(internet);
+
+// another variant of copy obj
+
+function log(a, b, c){
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+
+const num = [2, 4, 6];
+
+log (...num);
+
+// 
+
+const q = {
+    one: 1,
+    two: 2
+};
+
+const newObj = {...q};
+console.log(newObj);
