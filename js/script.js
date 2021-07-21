@@ -52,7 +52,7 @@ wrapper.append(div);
 // hearts[0].before(div);
 // hearts[0].after(div);
 
-// wrapper.insertBefore(div, hearts[0]); // - old version, now is line 48
+// wrapper.insertBefore(div, hearts[0]); // - old version, now is prepend, before, after
 
 // circles[0].remove();
 //wrapper.removeChild(hearts[1]); // - old version
