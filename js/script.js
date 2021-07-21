@@ -1,92 +1,67 @@
-"use strict";
+'use strict';
 
-let a = 5;
-let b = a;
-
-b = b + 5;
-
-console.log(b);
-console.log(a);
-
-function copy(mainObj) {
-    let objCopy = {};
-    let key;
-
-    for(key in mainObj) {
-        objCopy[key] = mainObj[key];
-    }
-    return objCopy;
-}
-
-const numbers = {
-    a: 2,
-    b: 5,
-    c: {
-        x: 7,
-        y: 4
-    }
-};
-
-// const newNumbers = copy(numbers);
-// newNumbers.a = 10;
-// newNumbers.c.x = 12;
-// console.log(newNumbers);
-
-const add = {
-    d: 17,
-    e: 20
-};
-
-// console.log(Object.assign(numbers, add));
-
-const clone = Object.assign({}, add);
-
-clone.d = add.e;
-
-// console.log(add);
-// console.log(clone);
+const box = document.getElementById('box');
+const btns = document.getElementsByTagName('button');
+const wrapper = document.querySelector('.wrapper');
+const circles = document.getElementsByClassName('circle');
+// const hearts = document.querySelectorAll('.heart');
+const hearts = wrapper.querySelectorAll('.heart'); // search inside only wrapper
+// hearts.forEach(item => {
+//     console.log(item);
+// });
+const oneHeart = document.querySelector('.heart');
 
 
-const ref = add;
-console.log(ref, add);
-add.d = 15;
 
-console.log(ref, add);
+// console.dir(box); // element v kachestve objecta, vse svoistva uvidim
 
-const oldArray = ['a', 'b', 'c'];
-const newArray = oldArray.slice();
+box.style.backgroundColor = 'blue';
+box.style.width = '500px';
 
-newArray[1] = 'ashdksdhfkjdf';
+box.style.cssText = `background-color: blue; width: 500px`;
 
-console.log(newArray);
-console.log(oldArray);
+btns[1].style.borderRadius = '100%';
 
-//Spread operater
+circles[0].style.backgroundColor = 'red';
 
-const video = ['youtube', 'vimeo', 'rutube'],
-      blogs = ['wordpress', 'livejournals', 'blogger'],
-      internet = [...video, ...blogs, 'vk', 'facebook'];
+// 1. ustarevshei variant:
 
-console.log(internet);
+// for (let i=0; i < hearts.length; i++) {
+//     hearts[i].style.backgroundColor ='blue';
+// }
 
-// another variant of copy obj
+// 2 variant:
 
-function log(a, b, c){
-    console.log(a);
-    console.log(b);
-    console.log(c);
-}
+hearts.forEach(item => {
+    item.style.backgroundColor = 'blue';
+});
 
-const num = [2, 4, 6];
 
-log (...num);
+const div = document.createElement('div');
+const text = document.createTextNode('I was here');
 
-// 
+div.classList.add('black');
 
-const q = {
-    one: 1,
-    two: 2
-};
+// document.body.append(div);
 
-const newObj = {...q};
-console.log(newObj);
+wrapper.append(div);
+// wrapper.appendChild(div); - old version
+
+// wrapper.prepend(div);
+
+// hearts[0].before(div);
+// hearts[0].after(div);
+
+// wrapper.insertBefore(div, hearts[0]); // - old version, now is line 48
+
+// circles[0].remove();
+//wrapper.removeChild(hearts[1]); // - old version
+
+hearts[0].replaceWith(circles[0]);
+// wrapper.replaceChild(circles[0], hearts[0]); // - old version
+
+div.innerHTML = "<h1>Hello World</h1>"; // mozno ispolzovat html tags
+
+// div.textContent = "Hello"; // zdes tolko text
+
+div.insertAdjacentHTML("afterend", '<h2>Hello</h2>');
