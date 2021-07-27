@@ -1,32 +1,31 @@
-// zdes ottalkivalis ot parents
+"use strict";
 
-// console.log(document.body);
-// console.log(document.head);
-// console.log(document.documentElement); // dlya html
-// console.log(document.body.childNodes); // uzly (nodes), kotorie yavlyautsya det'mi y body
+// touchstart - Коснулись экрана
+// touchend - Палец убрали
+// touchmove - Двигаем пальцем
 
-// console.log(document.body.firstChild);
-// console.log(document.body.firstElementChild);
-// // console.log(document.body.lastChild);
+window.addEventListener('DOMContentLoaded', () => {
 
-// // ottalkivaemsya ot absolutno lubogo elementa na stranice
-// // console.log(document.querySelector('#current').parentNode); // <div class="first">..</div>
-// console.log(document.querySelector('#current').parentElement); 
+    const box = document.querySelector('.box');
 
-// // console.log(document.querySelector('#current').parentNode.parentNode); // pokazivaet sled. parent vishe -> div.wrapper
+    box.addEventListener('touchstart', (e) => {
+        e.preventDefault();
 
-// // console.log(document.querySelector('[data-current="3"]').nextSibling); // text node
+        console.log('Start');
+        console.log(e.touches);
+    });
 
-// // console.log(document.querySelector('[data-current="3"]').previousSibling); // text node
+    box.addEventListener('touchmove', (e) => {
+        e.preventDefault();
 
-// console.log(document.querySelector('[data-current="3"]').nextElementSibling); // <li>4</li>
+        console.log('Move');
+    });
 
-// // dlya childNodes net childElement, poetomy shtoby izbavistsya ot nodes, use cycle:
+    box.addEventListener('touchend', (e) => {
+        e.preventDefault();
 
-for (let node of document.body.childNodes) {
-    if (node.nodeName == '#text') {
-        continue;
-    }
-    console.log(node);
-}
+        console.log('End');
+    });
+});
 
+// touches - Все пальцы которые сейчас взаимодействуют с экраном ("Коснуты" экрана)

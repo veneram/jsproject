@@ -34,8 +34,6 @@ P.S. Здесь есть несколько вариантов решения з
 
 // Возьмите свой код из предыдущей практики
 
-'use strict';
-
 document.addEventListener('DOMContentLoaded', () => {
 
     const movieDB = {
