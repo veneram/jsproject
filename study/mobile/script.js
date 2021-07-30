@@ -12,20 +12,22 @@ window.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         console.log('Start');
-        console.log(e.touches);
+        console.log(e.targetTouches);
     });
 
     box.addEventListener('touchmove', (e) => {
         e.preventDefault();
 
-        console.log('Move');
+        console.log('e.targetTouches[0].pageX');
     });
 
-    box.addEventListener('touchend', (e) => {
-        e.preventDefault();
+    // box.addEventListener('touchend', (e) => {
+    //     e.preventDefault();
 
-        console.log('End');
-    });
+    //     console.log('End');
+    // });
 });
 
 // touches - Все пальцы которые сейчас взаимодействуют с экраном ("Коснуты" экрана)
+// targetTouches - Список пальцев которые взаиможействуют с элементом
+// changedTouches - Список пальцев, которые учавствуют в текущем событии

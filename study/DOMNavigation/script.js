@@ -13,7 +13,8 @@
 // // console.log(document.querySelector('#current').parentNode); // <div class="first">..</div>
 // console.log(document.querySelector('#current').parentElement); 
 
-// // console.log(document.querySelector('#current').parentNode.parentNode); // pokazivaet sled. parent vishe -> div.wrapper
+// console.log(document.querySelector('#current').parentNode.parentNode); 
+// pokazivaet sled. parent vishe -> div.wrapper
 
 // // console.log(document.querySelector('[data-current="3"]').nextSibling); // text node
 
