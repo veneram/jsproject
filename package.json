@@ -26,5 +26,9 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "jshint": "^2.13.0",
+    "node-sass": "^6.0.1"
   }
 }
